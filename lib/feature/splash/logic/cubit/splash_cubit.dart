@@ -7,9 +7,7 @@ part 'splash_state.dart';
 
 class SplashCubit extends Cubit<SplashState> {
   SplashCubit() : super(SplashInitial());
-   void startAnimation() {
-    emit(AnimationStarted());
-  }
+
 
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 1), () {
