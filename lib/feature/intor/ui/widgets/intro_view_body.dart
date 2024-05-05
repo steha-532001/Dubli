@@ -57,7 +57,9 @@ class IntroViewBody extends StatelessWidget {
           ),
           CustomBottom(
             bottomHeight: 70,
-            onPressed: () {},
+            onPressed: () {
+              context.navigateTo(routeName: Routes.signUpViewsRoute);
+            },
             bottomtext: 'Sign Up',
             textBottomStyle: AppStyle.font30Primarymedium,
             backgroundColor: ColorManager.darkyellowColor,
