@@ -72,7 +72,7 @@ class AppStyle {
   );
 
   // Primary Color Styles
-    static TextStyle font14Primaryregular = const TextStyle(
+  static TextStyle font14Primaryregular = const TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w400,
     color: ColorManager.primaryColor,
@@ -82,7 +82,7 @@ class AppStyle {
     fontWeight: FontWeight.w600,
     color: ColorManager.primaryColor,
   );
-    static TextStyle font18Primaryregular= const TextStyle(
+  static TextStyle font18Primaryregular = const TextStyle(
     fontSize: 18,
     fontWeight: FontWeightHelper.regular,
     color: ColorManager.primaryColor,
@@ -99,14 +99,24 @@ class AppStyle {
     fontWeight: FontWeight.w600,
     color: Colors.white,
   );
-  static TextStyle font14Whiteregular = const TextStyle(
-    fontSize: 14,
+  static TextStyle font15Whiteregular = const TextStyle(
+    fontSize: 15,
     fontWeight: FontWeight.w400,
     color: Colors.white,
   );
   static TextStyle font16Whitesemibold = const TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w600,
+    color: Colors.white,
+  );
+    static TextStyle font22Whitesemibold = const TextStyle(
+    fontSize: 22,
+    fontWeight: FontWeight.w600,
+    color: Colors.white,
+  );
+  static TextStyle font18Whitemedium = const TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeightHelper.medium,
     color: Colors.white,
   );
   static TextStyle font30Whitesemibold = const TextStyle(

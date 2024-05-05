@@ -3,6 +3,8 @@ import 'package:dubli/core/utils/app_colors.dart';
 import 'package:dubli/feature/intor/ui/views/intro_view.dart';
 import 'package:dubli/feature/login/logic/cubit/login_cubit.dart';
 import 'package:dubli/feature/login/ui/views/login_view.dart';
+import 'package:dubli/feature/signup/logic/cubit/sign_up_cubit.dart';
+import 'package:dubli/feature/signup/ui/views/signup_view.dart';
 import 'package:dubli/feature/splash/logic/cubit/splash_cubit.dart';
 import 'package:dubli/feature/splash/ui/views/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +20,10 @@ class AppRoutes {
             child: const SplashView(),
           ),
         );
-
+      case Routes.intorViewsRoute:
+        return MaterialPageRoute(
+          builder: (context) => const IntroView(),
+        );
       case Routes.loginViewsRoute:
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
@@ -27,9 +32,12 @@ class AppRoutes {
           ),
         );
 
-      case Routes.intorViewsRoute:
+      case Routes.signUpViewsRoute:
         return MaterialPageRoute(
-          builder: (context) => const IntroView(),
+          builder: (context) => BlocProvider(
+            create: (context) => SignUpCubit(),
+            child: const SignUpView(),
+          ),
         );
 
       // case Routes.initialRoute:
