@@ -2,7 +2,6 @@ import 'package:dubli/core/utils/app_colors.dart';
 import 'package:dubli/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
-
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     super.key,
@@ -60,23 +59,23 @@ class CustomTextFormField extends StatelessWidget {
             filled: true,
             fillColor: fillColor ??
                 ColorManager
-                    .whiteColor, // Using provided fillColor or default grey color
+                    .darkGreyColor, // Using provided fillColor or default grey color
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
               borderSide: const BorderSide(
-                color: ColorManager.darkGreyColor,
+                color: ColorManager.primaryColor,
               ),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
               borderSide: const BorderSide(
-                color: ColorManager.whiteColor,
+                color: ColorManager.primaryColor,
               ),
             ),
             errorBorder: buildOutlineInputBorder(width: 2),
             focusedErrorBorder: buildOutlineInputBorder(width: 2),
             hintText: hintText,
-            hintStyle: AppStyle.font14Greyregular,
+            hintStyle: AppStyle.font14Primaryregular,
           )),
     );
   }

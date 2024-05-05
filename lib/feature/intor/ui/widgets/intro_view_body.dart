@@ -49,7 +49,7 @@ class IntroViewBody extends StatelessWidget {
               context.navigateTo(routeName: Routes.loginViewsRoute);
             },
             bottomtext: 'Login',
-            textBottomStyle: AppStyle.font30Primarysemibold,
+            textBottomStyle: AppStyle.font30Primarymedium,
             backgroundColor: ColorManager.darkyellowColor,
           ),
           const SizedBox(
@@ -59,7 +59,7 @@ class IntroViewBody extends StatelessWidget {
             bottomHeight: 70,
             onPressed: () {},
             bottomtext: 'Sign Up',
-            textBottomStyle: AppStyle.font30Primarysemibold,
+            textBottomStyle: AppStyle.font30Primarymedium,
             backgroundColor: ColorManager.darkyellowColor,
           ),
         ],

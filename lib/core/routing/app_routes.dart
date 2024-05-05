@@ -1,6 +1,7 @@
 import 'package:dubli/core/routing/routes.dart';
 import 'package:dubli/core/utils/app_colors.dart';
 import 'package:dubli/feature/intor/ui/views/intro_view.dart';
+import 'package:dubli/feature/login/logic/cubit/login_cubit.dart';
 import 'package:dubli/feature/login/ui/views/login_view.dart';
 import 'package:dubli/feature/splash/logic/cubit/splash_cubit.dart';
 import 'package:dubli/feature/splash/ui/views/splash_view.dart';
@@ -20,7 +21,10 @@ class AppRoutes {
 
       case Routes.loginViewsRoute:
         return MaterialPageRoute(
-          builder: (context) => const LoginView(),
+          builder: (context) => BlocProvider(
+            create: (context) => LoginCubit(),
+            child: const LoginView(),
+          ),
         );
 
       case Routes.intorViewsRoute:
