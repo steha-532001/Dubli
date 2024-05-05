@@ -1,7 +1,5 @@
 import 'package:dubli/core/utils/app_colors.dart';
-import 'package:dubli/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomBottom extends StatelessWidget {
   const CustomBottom({
@@ -25,7 +23,7 @@ class CustomBottom extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: bottomWidth ?? double.infinity,
-      height: bottomHeight ?? 50.h,
+      height: bottomHeight ?? 50,
       child: TextButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
@@ -41,7 +39,7 @@ class CustomBottom extends StatelessWidget {
         ),
         child: Text(
           bottomtext,
-          style: textBottomStyle ?? AppStyle.font14Greyregular,
+          style: textBottomStyle,
         ),
       ),
     );
