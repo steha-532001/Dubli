@@ -96,14 +96,14 @@ class AppStyle {
     fontWeight: FontWeight.w600,
     color: Colors.white,
   );
-  static TextStyle font18Whitesemibold = TextStyle(
-    fontSize: 18.sp,
-    fontWeight: FontWeight.w600,
-    color: Colors.white,
+  static TextStyle font30Whitesemibold = const TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorManager.whiteColor,
   );
-  static TextStyle font22Whitesemibold = TextStyle(
-    fontSize: 22.sp,
-    fontWeight: FontWeight.w600,
-    color: Colors.white,
+  static TextStyle font70Whitesemibold = const TextStyle(
+    fontSize: 70,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorManager.whiteColor,
   );
 }
