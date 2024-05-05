@@ -1,8 +1,9 @@
 import 'package:dubli/core/routing/routes.dart';
 import 'package:dubli/core/utils/app_colors.dart';
-import 'package:dubli/feature/login/ui/views/login_screen.dart';
+import 'package:dubli/feature/intor/ui/views/intro_view.dart';
+import 'package:dubli/feature/login/ui/views/login_view.dart';
 import 'package:dubli/feature/splash/logic/cubit/splash_cubit.dart';
-import 'package:dubli/feature/splash/ui/views/splash_screen.dart';
+import 'package:dubli/feature/splash/ui/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,14 +14,20 @@ class AppRoutes {
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
             create: (context) => SplashCubit(),
-            child: const SplashScreen(),
+            child: const SplashView(),
           ),
         );
 
       case Routes.loginViewsRoute:
         return MaterialPageRoute(
-          builder: (context) => const LoginScreen(),
+          builder: (context) => const LoginView(),
         );
+
+      case Routes.intorViewsRoute:
+        return MaterialPageRoute(
+          builder: (context) => const IntroView(),
+        );
+
       // case Routes.initialRoute:
       //   if (onBording != null) {
       //     if (usertoken != null) {

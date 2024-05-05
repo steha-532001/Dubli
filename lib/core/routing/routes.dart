@@ -1,5 +1,7 @@
 class Routes {
   static const String initialRoute = '/';
+  static const String intorViewsRoute = '/intorViews';
+
   static const String loginViewsRoute = '/loginViews';
   static const String signUpViewsRoute = '/signUpViews';
 
