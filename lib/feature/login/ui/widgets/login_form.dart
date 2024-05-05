@@ -65,8 +65,14 @@ class _LoginFormState extends State<LoginForm> {
                   });
                 },
                 child: ispassword
-                    ? const Icon(Icons.visibility_off)
-                    : const Icon(Icons.visibility),
+                    ? const Icon(
+                        Icons.visibility_off,
+                        color: ColorManager.primaryColor,
+                      )
+                    : const Icon(
+                        Icons.visibility,
+                        color: ColorManager.primaryColor,
+                      ),
               ),
               hintText: 'Min 6 Cyfr',
               keyboardType: TextInputType.visiblePassword,
@@ -76,13 +82,10 @@ class _LoginFormState extends State<LoginForm> {
               },
             ),
             const SizedBox(
-              height: 5,
+              height: 10,
             ),
             GestureDetector(
-              onTap: () {
-                // Navigator.of(context)
-                // .pushNamed(ForgetPassword.routeName);
-              },
+              onTap: () {},
               child: Text(
                 textAlign: TextAlign.right,
                 'Forgot your password?',
@@ -97,16 +100,4 @@ class _LoginFormState extends State<LoginForm> {
       ),
     );
   }
-
-  // void validateEmail(String val) {
-  //   if (!EmailValidator.validate(val, true) && val.isNotEmpty) {
-  //     setState(() {
-  //       errorMessage = "Please enter valid Email Address";
-  //     });
-  //   } else {
-  //     setState(() {
-  //       errorMessage = "";
-  //     });
-  //   }
-  // }
 }

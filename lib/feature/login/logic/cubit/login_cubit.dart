@@ -13,15 +13,5 @@ class LoginCubit extends Cubit<LoginState> {
 
   var passwordController = TextEditingController();
 
-  bool isPasswordShow = true;
-  Widget icon = const Icon(Icons.visibility_off);
-  void changepasswordVisiability() {
-    isPasswordShow = !isPasswordShow;
-
-    icon = isPasswordShow
-        ? const Icon(Icons.visibility_off)
-        : const Icon(Icons.visibility);
-
-    emit(LoginChangePasswordVisiablity());
-  }
+ 
 }
