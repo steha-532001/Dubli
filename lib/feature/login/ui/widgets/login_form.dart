@@ -56,6 +56,7 @@ class _LoginFormState extends State<LoginForm> {
               ),
             ),
             CustomTextFormField(
+              
               obscureText: ispassword,
               suffixIcon: InkWell(
                 splashColor: Colors.transparent,
