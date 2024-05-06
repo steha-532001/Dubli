@@ -1,5 +1,4 @@
 import 'package:dash_chat_2/dash_chat_2.dart';
-import 'package:dio/dio.dart';
 import 'package:dubli/core/networking/api_services.dart';
 import 'package:dubli/core/networking/end_boint.dart';
 import 'package:dubli/core/utils/app_colors.dart';
@@ -19,7 +18,7 @@ class _ChatViewBodyState extends State<ChatViewBody> {
   final _user = ChatUser(id: '1', firstName: 'user-data');
   final _bot = ChatUser(
     id: '2',
-    firstName: 'Agri-tech360',
+    firstName: 'Dubli',
     profileImage: 'assets/images/logo.png',
   );
   List<ChatMessage> messages = [];
@@ -109,20 +108,18 @@ class _ChatViewBodyState extends State<ChatViewBody> {
       List<String> texts = messagesHistory
           .map<String>((message) => message['content'].toString())
           .toList();
-      String concatenatedText = texts.join(' ');
-      FormData formData = FormData.fromMap({
-        'message': concatenatedText,
-      });
 
-      var response = await ApiServices.postFormData(
+      String concatenatedText = texts.join(' ');
+
+      var response = await ApiServices.postData(
         endpoint: chatendpoint,
-        formData: formData,
+        data: {'user_input': concatenatedText},
       );
 
       ChatbotResponse data = ChatbotResponse.fromJson(response);
       return data.message;
     } catch (e) {
-      return null;
+      return e.toString();
     }
   }
 }

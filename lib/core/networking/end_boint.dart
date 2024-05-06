@@ -1,4 +1,4 @@
-const baseUrl = 'https://2dc8-156-203-232-36.ngrok-free.app';
+const baseUrl = 'https://998b-156-203-186-121.ngrok-free.app';
 
 const loginendpoint = '/login';
 
@@ -10,4 +10,4 @@ const mechanicendpoint = '/get-mechanics';
 
 const exploreendpoint = '/explore';
 
-const chatendpoint = '/chat';
+const chatendpoint = '/query';

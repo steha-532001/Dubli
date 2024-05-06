@@ -7,7 +7,7 @@ class ChatbotResponse {
 
   factory ChatbotResponse.fromJson(Map<String, dynamic> json) {
     return ChatbotResponse(
-      message: json['message'],
+      message: json['response'],
     );
   }
 }
