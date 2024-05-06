@@ -1,12 +1,15 @@
 import 'package:dubli/core/routing/routes.dart';
 import 'package:dubli/core/utils/app_colors.dart';
 import 'package:dubli/feature/intor/ui/views/intro_view.dart';
+import 'package:dubli/feature/layout/logic/cubit/layout_cubit.dart';
+import 'package:dubli/feature/layout/presentation/views/layout_views.dart';
 import 'package:dubli/feature/login/logic/cubit/login_cubit.dart';
 import 'package:dubli/feature/login/ui/views/login_view.dart';
 import 'package:dubli/feature/signup/logic/cubit/sign_up_cubit.dart';
 import 'package:dubli/feature/signup/ui/views/signup_view.dart';
 import 'package:dubli/feature/splash/logic/cubit/splash_cubit.dart';
 import 'package:dubli/feature/splash/ui/views/splash_view.dart';
+import 'package:dubli/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -40,6 +43,15 @@ class AppRoutes {
           ),
         );
 
+      case Routes.layOutViewsRoute:
+        return MaterialPageRoute(
+          builder: (context) {
+            return BlocProvider(
+              create: (context) => serviceLocator.get<LayoutCubit>(),
+              child: const LayOutViews(),
+            );
+          },
+        );
       // case Routes.initialRoute:
       //   if (onBording != null) {
       //     if (usertoken != null) {
