@@ -1,5 +1,7 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:dubli/core/helper/naviagtion_extentaions.dart';
+import 'package:dubli/core/routing/routes.dart';
 import 'package:dubli/core/utils/app_colors.dart';
 import 'package:dubli/core/utils/app_image_assets.dart';
 import 'package:dubli/core/utils/app_styles.dart';
@@ -71,6 +73,7 @@ class _SignUpViewBodyState extends State<SignupViewBody> {
                           .formKey
                           .currentState!
                           .validate()) {
+                        context.navigateTo(routeName: Routes.layOutViewsRoute);
                       } else {
                         context.read<SignUpCubit>().autovalidateMode =
                             AutovalidateMode.always;

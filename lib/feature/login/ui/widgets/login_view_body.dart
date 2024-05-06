@@ -1,3 +1,5 @@
+import 'package:dubli/core/helper/naviagtion_extentaions.dart';
+import 'package:dubli/core/routing/routes.dart';
 import 'package:dubli/core/utils/app_colors.dart';
 import 'package:dubli/core/utils/app_image_assets.dart';
 import 'package:dubli/core/utils/app_styles.dart';
@@ -20,8 +22,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
-      listener: (context, state) {
-      },
+      listener: (context, state) {},
       builder: (context, state) {
         var cubit = BlocProvider.of<LoginCubit>(context);
 
@@ -62,6 +63,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     bottomHeight: 60,
                     onPressed: () {
                       if (cubit.formKey.currentState!.validate() == true) {
+                        context.navigateTo(routeName: Routes.layOutViewsRoute);
                       } else {
                         cubit.autovalidateMode = AutovalidateMode.always;
                         setState(() {});
