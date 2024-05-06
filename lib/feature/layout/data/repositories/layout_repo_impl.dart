@@ -1,14 +1,14 @@
 import 'package:dubli/feature/chat/ui/views/chat_view.dart';
+import 'package:dubli/feature/focus/ui/views/focus_view.dart';
 import 'package:dubli/feature/home/ui/views/home_view.dart';
 import 'package:dubli/feature/layout/data/models/change_index_params.dart';
 import 'package:dubli/feature/layout/data/repositories/layout_repo.dart';
 import 'package:dubli/feature/layout/logic/cubit/layout_cubit.dart';
 import 'package:dubli/feature/setting/ui/views/settiings_view.dart';
-import 'package:dubli/feature/timer/ui/views/timer_view.dart';
+import 'package:dubli/feature/tasks/ui/views/tasks_view.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../events/ui/views/events_view.dart';
 
 class LayoutRepoImpl extends LayOutRepo {
   LayoutRepoImpl();
@@ -27,9 +27,9 @@ class LayoutRepoImpl extends LayOutRepo {
   List<Widget> getBody() {
     return const <Widget>[
       ChatView(),
-      TimerView(),
+      FocusView(),
       HomeView(),
-      EventsView(),
+      TasksView(),
       SettingsView(),
     ];
   }
@@ -43,15 +43,15 @@ class LayoutRepoImpl extends LayOutRepo {
         ),
         BottomNavigationBarItem(
           icon: Icon(Iconsax.timer),
-          label: 'timer',
+          label: 'Focus',
         ),
         BottomNavigationBarItem(
           label: 'Home',
           icon: Icon(Iconsax.home),
         ),
         BottomNavigationBarItem(
-          label: 'Events',
-          icon: Icon(Icons.event),
+          label: 'tasks',
+          icon: Icon(Icons.check),
         ),
         BottomNavigationBarItem(
           icon: Icon(Iconsax.setting),

@@ -1,8 +1,8 @@
 import 'package:dubli/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
-class EventsViewBody extends StatelessWidget {
-  const EventsViewBody({super.key});
+class TasksViewBody extends StatelessWidget {
+  const TasksViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class EventsViewBody extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'Events View',
+          'Tasks View',
           style: AppStyle.font18Whitemedium,
         ),
         const Row()

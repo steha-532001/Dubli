@@ -1,8 +1,8 @@
 import 'package:dubli/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
-class TimerViewBody extends StatelessWidget {
-  const TimerViewBody({super.key});
+class FocusViewBody extends StatelessWidget {
+  const FocusViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class TimerViewBody extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'Timer View',
+          'Focus View',
           style: AppStyle.font18Whitemedium,
         ),
         const Row()
