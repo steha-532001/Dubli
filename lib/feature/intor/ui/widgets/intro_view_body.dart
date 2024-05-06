@@ -1,9 +1,9 @@
 import 'package:dubli/core/helper/naviagtion_extentaions.dart';
 import 'package:dubli/core/routing/routes.dart';
 import 'package:dubli/core/utils/app_colors.dart';
-import 'package:dubli/core/utils/app_image_assets.dart';
 import 'package:dubli/core/utils/app_styles.dart';
 import 'package:dubli/core/widgets/app_bottom.dart';
+import 'package:dubli/core/widgets/app_logo_and_app_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -20,29 +20,10 @@ class IntroViewBody extends StatelessWidget {
           const Spacer(
             flex: 2,
           ),
-          Image.asset(
-            ImagesAssetsManager.applogoImage,
-            height: 200,
+          const AppLogoAndAppName(),
+          const Spacer(
+            flex: 2,
           ),
-          const Spacer(),
-          Align(
-            alignment: Alignment.center,
-            child: Text(
-              'DUPLI',
-              style: AppStyle.font80Whitesemibold,
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Align(
-            alignment: Alignment.center,
-            child: Text(
-              'Your Digital Twin',
-              style: AppStyle.font40Whitesemibold,
-            ),
-          ),
-          const Spacer(),
           CustomBottom(
             bottomHeight: 70,
             onPressed: () {

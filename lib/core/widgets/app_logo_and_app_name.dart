@@ -16,16 +16,19 @@ class AppLogoAndAppName extends StatelessWidget {
           ImagesAssetsManager.applogoImage,
           height: 200,
         ),
+        const SizedBox(
+          height: 10,
+        ),
         Text(
           'DUPLI',
-          style: AppStyle.font70Whitesemibold,
+          style: AppStyle.font80Whitesemibold,
         ),
         const SizedBox(
           height: 30,
         ),
         Text(
           'Your Digital Twin',
-          style: AppStyle.font30Whitesemibold,
+          style: AppStyle.font40Whitesemibold,
         ),
       ],
     );

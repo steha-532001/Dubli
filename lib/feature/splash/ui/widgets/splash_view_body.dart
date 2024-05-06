@@ -1,7 +1,7 @@
 import 'package:dubli/core/helper/naviagtion_extentaions.dart';
 import 'package:dubli/core/routing/routes.dart';
 import 'package:dubli/feature/splash/logic/cubit/splash_cubit.dart';
-import 'package:dubli/feature/splash/ui/widgets/app_logo_and_app_name.dart';
+import 'package:dubli/core/widgets/app_logo_and_app_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
