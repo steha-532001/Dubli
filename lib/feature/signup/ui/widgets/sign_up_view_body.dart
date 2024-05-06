@@ -1,11 +1,12 @@
-// ignore_for_file: must_be_immutable
-
+// ignore_for_file: must_be_immutable, use_build_context_synchronously
 import 'package:dubli/core/helper/naviagtion_extentaions.dart';
+import 'package:dubli/core/networking/local_services.dart';
 import 'package:dubli/core/routing/routes.dart';
 import 'package:dubli/core/utils/app_colors.dart';
 import 'package:dubli/core/utils/app_styles.dart';
 import 'package:dubli/core/widgets/app_bottom.dart';
 import 'package:dubli/core/widgets/app_logo_and_app_name.dart';
+import 'package:dubli/core/widgets/shows_toust_color.dart';
 import 'package:dubli/feature/signup/logic/cubit/sign_up_cubit.dart';
 import 'package:dubli/feature/signup/ui/widgets/have_an_acount_and_sign_in.dart';
 import 'package:dubli/feature/signup/ui/widgets/sign_up_form.dart';
@@ -23,10 +24,46 @@ class _SignUpViewBodyState extends State<SignupViewBody> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignUpCubit, SignUpState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        if (state is SignUpLoading) {
+          showDialog(
+            context: context,
+            builder: (_) => const Center(
+              child: CircularProgressIndicator(
+                color: ColorManager.whiteColor,
+              ),
+            ),
+          );
+        } else {
+          // Dismiss the dialog for any state other than SignUpLoading
+          Navigator.pop(context);
+        }
+
+        if (state is SignUpSuccess) {
+          showTouster(
+            massage: 'Sign Up Success',
+            state: ToustState.SUCCESS,
+          );
+          LocalServices.saveData(
+            key: 'token',
+            value: 'true',
+          ).then(
+            (value) {
+              context.navigateAndRemoveUntil(
+                newRoute: Routes.layOutViewsRoute,
+              );
+            },
+          );
+        } else if (state is SignUpFailed) {
+          showTouster(
+            massage: state.error,
+            state: ToustState.ERROR,
+          );
+        }
+      },
       builder: (context, state) {
-        // var signUpCubit =
-        //     BlocProvider.of<SignUpCubit>(context); // get the cubit instance
+        var cubit =
+            BlocProvider.of<SignUpCubit>(context); // get the cubit instance
         return SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: SafeArea(
@@ -58,13 +95,18 @@ class _SignUpViewBodyState extends State<SignupViewBody> {
                   CustomBottom(
                     bottomHeight: 60,
                     bottomtext: 'Sign Up',
-                    onPressed: () {
+                    onPressed: () async {
                       if (context
                           .read<SignUpCubit>()
                           .formKey
                           .currentState!
                           .validate()) {
-                        context.navigateTo(routeName: Routes.layOutViewsRoute);
+                        await cubit.signUpUser(
+                          email: cubit.emailController.text,
+                          password: cubit.passwordController.text,
+                          phone: cubit.phoneController.text,
+                          username: cubit.nameController.text,
+                        );
                       } else {
                         context.read<SignUpCubit>().autovalidateMode =
                             AutovalidateMode.always;
