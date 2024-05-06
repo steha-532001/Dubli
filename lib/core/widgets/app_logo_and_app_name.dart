@@ -5,7 +5,13 @@ import 'package:flutter/material.dart';
 class AppLogoAndAppName extends StatelessWidget {
   const AppLogoAndAppName({
     super.key,
+    this.logoHeight,
+    this.tittle,
+    this.subtittle,
   });
+  final double? logoHeight;
+  final String? tittle;
+  final String? subtittle;
 
   @override
   Widget build(BuildContext context) {
@@ -14,22 +20,28 @@ class AppLogoAndAppName extends StatelessWidget {
       children: [
         Image.asset(
           ImagesAssetsManager.applogoImage,
-          height: 200,
+          height: logoHeight ?? 200,
         ),
-        const SizedBox(
-          height: 10,
-        ),
+        subtittle != null
+            ? const SizedBox(
+                height: 10,
+              )
+            : Container(),
         Text(
-          'DUPLI',
+          tittle ?? 'DUPLI',
           style: AppStyle.font80Whitesemibold,
         ),
-        const SizedBox(
-          height: 30,
-        ),
-        Text(
-          'Your Digital Twin',
-          style: AppStyle.font40Whitesemibold,
-        ),
+        subtittle != null
+            ? const SizedBox(
+                height: 10,
+              )
+            : Container(),
+        subtittle != null
+            ? Text(
+                subtittle ?? '',
+                style: AppStyle.font40Whitesemibold,
+              )
+            : Container(),
       ],
     );
   }

@@ -32,7 +32,9 @@ class _SplashScreanBodyState extends State<SplashViewBody>
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          AppLogoAndAppName(),
+          AppLogoAndAppName(
+            subtittle: 'Your Digital Twin',
+          ),
         ],
       ),
     );

@@ -1,9 +1,9 @@
 import 'package:dubli/core/helper/naviagtion_extentaions.dart';
 import 'package:dubli/core/routing/routes.dart';
 import 'package:dubli/core/utils/app_colors.dart';
-import 'package:dubli/core/utils/app_image_assets.dart';
 import 'package:dubli/core/utils/app_styles.dart';
 import 'package:dubli/core/widgets/app_bottom.dart';
+import 'package:dubli/core/widgets/app_logo_and_app_name.dart';
 import 'package:dubli/feature/login/logic/cubit/login_cubit.dart';
 import 'package:dubli/feature/login/ui/widgets/donot_have_acound_and_sign_up.dart';
 import 'package:dubli/feature/login/ui/widgets/login_form.dart';
@@ -25,24 +25,15 @@ class _LoginViewBodyState extends State<LoginViewBody> {
       listener: (context, state) {},
       builder: (context, state) {
         var cubit = BlocProvider.of<LoginCubit>(context);
-
         return SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(8),
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  const SizedBox(height: 30),
-                  Image.asset(
-                    ImagesAssetsManager.applogoImage,
-                    height: 150,
-                  ),
-                  Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      'DUPLI',
-                      style: AppStyle.font70Whitesemibold,
-                    ),
+                  const SizedBox(height: 20),
+                  const AppLogoAndAppName(
+                    logoHeight: 140,
                   ),
                   Container(
                     width: double.infinity,

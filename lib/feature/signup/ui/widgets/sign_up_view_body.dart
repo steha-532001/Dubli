@@ -3,9 +3,9 @@
 import 'package:dubli/core/helper/naviagtion_extentaions.dart';
 import 'package:dubli/core/routing/routes.dart';
 import 'package:dubli/core/utils/app_colors.dart';
-import 'package:dubli/core/utils/app_image_assets.dart';
 import 'package:dubli/core/utils/app_styles.dart';
 import 'package:dubli/core/widgets/app_bottom.dart';
+import 'package:dubli/core/widgets/app_logo_and_app_name.dart';
 import 'package:dubli/feature/signup/logic/cubit/sign_up_cubit.dart';
 import 'package:dubli/feature/signup/ui/widgets/have_an_acount_and_sign_in.dart';
 import 'package:dubli/feature/signup/ui/widgets/sign_up_form.dart';
@@ -35,18 +35,9 @@ class _SignUpViewBodyState extends State<SignupViewBody> {
               child: Column(
                 children: [
                   const SizedBox(height: 30),
-                  Image.asset(
-                    ImagesAssetsManager.applogoImage,
-                    height: 150,
+                  const AppLogoAndAppName(
+                    logoHeight: 140,
                   ),
-                  Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      'DUPLI',
-                      style: AppStyle.font70Whitesemibold,
-                    ),
-                  ),
-                  const SizedBox(height: 5),
                   Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
