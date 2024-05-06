@@ -1,9 +1,7 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:dubli/core/helper/naviagtion_extentaions.dart';
 import 'package:dubli/core/routing/routes.dart';
-import 'package:dubli/core/utils/app_image_assets.dart';
-import 'package:dubli/core/utils/app_styles.dart';
 import 'package:dubli/feature/splash/logic/cubit/splash_cubit.dart';
+import 'package:dubli/feature/splash/ui/widgets/app_logo_and_app_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -30,35 +28,11 @@ class _SplashScreanBodyState extends State<SplashViewBody>
           context.navigateAndRemoveUntil(newRoute: Routes.intorViewsRoute);
         }
       },
-      child: Column(
+      child: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Image.asset(
-            ImagesAssetsManager.applogoImage,
-            height: 200,
-          ),
-          FadeInLeft(
-            child: Align(
-              alignment: Alignment.center,
-              child: Text(
-                'DUPLI',
-                style: AppStyle.font70Whitesemibold,
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          FadeInRight(
-            child: Align(
-              alignment: Alignment.center,
-              child: Text(
-                'Your Digital Twin',
-                style: AppStyle.font30Whitesemibold,
-              ),
-            ),
-          ),
+          AppLogoAndAppName(),
         ],
       ),
     );
