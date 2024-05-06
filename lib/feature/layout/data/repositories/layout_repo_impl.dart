@@ -7,11 +7,10 @@ import 'package:dubli/feature/layout/logic/cubit/layout_cubit.dart';
 import 'package:dubli/feature/setting/ui/views/settiings_view.dart';
 import 'package:dubli/feature/tasks/ui/views/tasks_view.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
-
 
 class LayoutRepoImpl extends LayOutRepo {
   LayoutRepoImpl();
+
   @override
   void changeBottomNavIndex({required ChangeIndexParams changeIndexParams}) {
     LayoutCubit.getObject(changeIndexParams.context).currentIndex =
@@ -36,26 +35,41 @@ class LayoutRepoImpl extends LayOutRepo {
 
   @override
   List<BottomNavigationBarItem> getBottomNavItems() =>
-      const <BottomNavigationBarItem>[
+      <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.chat),
-          label: 'Chats',
+          icon: Image.asset(
+            'assets/images/chat.png',
+            height: 33,
+          ),
+          label: '',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Iconsax.timer),
-          label: 'Focus',
+          icon: Image.asset(
+            'assets/images/light.png',
+            height: 37,
+          ),
+          label: '',
         ),
         BottomNavigationBarItem(
-          label: 'Home',
-          icon: Icon(Iconsax.home),
+          label: '',
+          icon: Image.asset(
+            'assets/images/check.png',
+            height: 33,
+          ),
         ),
         BottomNavigationBarItem(
-          label: 'tasks',
-          icon: Icon(Icons.check),
+          label: '',
+          icon: Image.asset(
+            'assets/images/bell.png',
+            height: 28,
+          ),
         ),
         BottomNavigationBarItem(
-          icon: Icon(Iconsax.setting),
-          label: 'Settings',
+          icon: Image.asset(
+            'assets/images/setting.png',
+            height: 28,
+          ),
+          label: '',
         ),
       ];
 }
