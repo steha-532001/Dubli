@@ -1,3 +1,4 @@
+import 'package:dubli/core/helper/helper_const.dart';
 import 'package:dubli/core/helper/naviagtion_extentaions.dart';
 import 'package:dubli/core/routing/routes.dart';
 import 'package:dubli/feature/splash/logic/cubit/splash_cubit.dart';
@@ -25,7 +26,10 @@ class _SplashScreanBodyState extends State<SplashViewBody>
     return BlocListener<SplashCubit, SplashState>(
       listener: (context, state) {
         if (state is SplashNavigatedToHome) {
-          context.navigateAndRemoveUntil(newRoute: Routes.intorViewsRoute);
+          if (usertoken != null) {
+            context.navigateAndRemoveUntil(newRoute: Routes.intorViewsRoute);
+          }
+          context.navigateAndRemoveUntil(newRoute: Routes.layOutViewsRoute);
         }
       },
       child: const Column(

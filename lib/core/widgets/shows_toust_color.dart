@@ -31,7 +31,7 @@ Color showsToustColor(ToustState state) {
 
   switch (state) {
     case ToustState.SUCCESS:
-      color = ColorManager.primaryColor;
+      color = ColorManager.darkyellowColor;
       break;
     case ToustState.ERROR:
       color = ColorManager.redColor;

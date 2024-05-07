@@ -11,7 +11,7 @@ class HomeViewBody extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'Home View',
+          'Task List',
           style: AppStyle.font18Whitemedium,
         ),
         const Row()

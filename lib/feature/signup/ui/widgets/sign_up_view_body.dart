@@ -63,7 +63,7 @@ class _SignUpViewBodyState extends State<SignupViewBody> {
       },
       builder: (context, state) {
         var cubit =
-            BlocProvider.of<SignUpCubit>(context); // get the cubit instance
+            BlocProvider.of<SignUpCubit>(context); 
         return SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: SafeArea(
